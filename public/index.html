@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const c1 = document.getElementById('canvas');
+    const ct1 = c1.getContext('2d');
+
+    // Set canvas dimensions
+    c1.width = 700;
+    c1.height = 900;
+var name=prompt("Enter name")
+var xp,yp
+ 
+function posi(){
+  ct1.clearRect(0,200,600,400)
+    navigator.geolocation.getCurrentPosition((position) => {
+  yp=position.coords.latitude
+  xp=position.coords.longitude
+      ct1.fillText(name, 300+xp,250+yp)
+      ct1.fillText(xp+"/"+yp,200,40)
+});
+}
+       
+function my(){
+ const option = { method: 'GET', }  
+ fetch("/getnum",option )
+     .then(response => response.json())
+     .then(response => {
+               ct1.fillText(response.nmber,10,100)   
+                         } )
+      .catch(err => {alert('locate err='+err)}); 
+                        
+}
+           
+ct1.font="50px Arial"
+ct1.fillText("Test",0,90)
+    setTimeout(my,2000)
+    setTimeout(posi,800)
+    setInterval(posi,10000)
+    </script>
+  </body>
+ </html>
