@@ -24,7 +24,7 @@ function posi(){
     
 function ky(){
  const option = { method: 'GET', }  
- fetch("/getnum",option )
+ fetch("/getkeys",option )
      .then(response => response.json())
      .then(response => {
                alert(response.ks) 
