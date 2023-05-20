@@ -28,7 +28,7 @@ function ky(){
      .then(response => response.json())
      .then(response => {
         alert('keys length='+response.le)
-               alert('keys='+response.ks) 
+               alert('keys='+response.ks[0]) 
                          } )
       .catch(err => {alert('keys err='+err)}); 
                         
