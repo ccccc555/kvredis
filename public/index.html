@@ -39,7 +39,7 @@ function my(){
  fetch("/getnum",option )
      .then(response => response.json())
      .then(response => {
-               ct1.fillText(response.nmber,10,100)   
+               ct1.fillText(response.nmber+' '+response.ac,10,100)   
                          } )
       .catch(err => {alert('number err='+err)}); 
                         
