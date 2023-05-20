@@ -27,7 +27,8 @@ function ky(){
  fetch("/getkeys",option )
      .then(response => response.json())
      .then(response => {
-               alert(response.ks) 
+        alert('keys length='+response.le)
+               alert('keys='+response.ks) 
                          } )
       .catch(err => {alert('keys err='+err)}); 
                         
