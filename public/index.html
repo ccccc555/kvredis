@@ -21,6 +21,17 @@ function posi(){
       ct1.fillText(xp+"/"+yp,200,40)
 });
 }
+    
+function ky(){
+ const option = { method: 'GET', }  
+ fetch("/getnum",option )
+     .then(response => response.json())
+     .then(response => {
+               alert(response.ks) 
+                         } )
+      .catch(err => {alert('locate err='+err)}); 
+                        
+}
        
 function my(){
  const option = { method: 'GET', }  
@@ -36,8 +47,20 @@ function my(){
 ct1.font="50px Arial"
 ct1.fillText("Test",0,90)
     setTimeout(my,2000)
+setTimeout(ky,1000)    
+    
+    
+  
+    
     setTimeout(posi,800)
     setInterval(posi,10000)
     </script>
   </body>
  </html>
+
+
+
+
+
+
+
