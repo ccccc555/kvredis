@@ -12,6 +12,7 @@
 var name=prompt("Enter name")
 var xp,yp, namlen=0
 var names=[]
+var proc, d=0
  
 function posi(){
   ct1.clearRect(0,200,600,400)
@@ -38,12 +39,19 @@ function ky(){
         ct1.fillText(names[j].name,0,200+35*j)
         
         }
-       dy(0)
+       d=0
+       proc=setInterval(disp,800)
        } )
       .catch(err => {alert('keys err='+err)}); 
                         
 }
  
+function disp(){
+ if (d>=numlen){clearInterval(proc); return}
+ dy(d)
+ d++
+}
+
 function dy(id){
   var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
             
@@ -66,7 +74,7 @@ function sv(){
     
            
 ct1.font="40px Arial"
-ct1.fillText("Test12",0,90)
+ct1.fillText("Test13",0,90)
     
    setTimeout(posi,100) 
  setTimeout(ky,2500)
