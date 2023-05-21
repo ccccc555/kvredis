@@ -27,8 +27,11 @@ function ky(){
  fetch("/getkeys",option )
      .then(response => response.json())
      .then(response => {
-        alert('keys length='+response.le)
-               alert('keys='+response.ks) 
+      for(var j=0; j<response.le; j++){
+        ct1.fillText(response.ks[j],0,200+15*j)
+        }
+      //  alert('keys length='+response.le)
+         //      alert('keys='+response.ks) 
                          } )
       .catch(err => {alert('keys err='+err)}); 
                         
@@ -75,15 +78,17 @@ function my(){
 */
            
 ct1.font="50px Arial"
-ct1.fillText("Test7",0,90)
-    setTimeout(ky,2200)
- setTimeout(sv,5000)    
+ct1.fillText("Test8",0,90)
+    
+   setTimeout(posi,200) 
+    setTimeout(sv,2000)
+ setTimeout(ks,3500)    
  
     
     
   
 
-    setTimeout(posi,300)
+    
   
   
   
