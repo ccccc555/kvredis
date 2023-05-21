@@ -3,5 +3,5 @@ import { NextResponse } from 'next/server';
 
 export default async function handler(req,res) {
    await kv.set('new','hello')
-  return NextResponse.json({ done: 0});
+  res.status(200).json({ done: 0});
 }
