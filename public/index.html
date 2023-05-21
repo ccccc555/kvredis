@@ -7,20 +7,20 @@
     const ct1 = c1.getContext('2d');
 
     // Set canvas dimensions
-    c1.width = 700;
-    c1.height = 900;
+    c1.width = 740;
+    c1.height = 950;
 var name=prompt("Enter name")
 var xp,yp, namlen=0
 var names=[]
 var proc, d=0,ups=0
  
 function posi(){
-  ct1.clearRect(0,200,600,400)
+  ct1.clearRect(0,700,700,200)
     navigator.geolocation.getCurrentPosition((position) => {
    yp=position.coords.latitude
    xp=position.coords.longitude
       ct1.fillText(name, 360+3*xp,300-3*yp)
-      ct1.fillText(xp+"/"+yp,200,40)   
+      ct1.fillText(xp+"/"+yp,200,760)   
       
       setTimeout(sv,10)
 });
@@ -79,7 +79,7 @@ function sv(){
     
            
 ct1.font="40px Arial"
-ct1.fillText("Findu",0,90)
+ct1.fillText("Findu",0,850)
 run()  
 function run(){
    posi()
