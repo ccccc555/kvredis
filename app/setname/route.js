@@ -4,6 +4,6 @@ import { NextResponse } from 'next/server';
 export async function POST(request){
   const data=await request.json();
   
-  const a=await kv.set('d','f')
+  const a=await kv.set(data.word,'f')
   return NextResponse.json({ done: 0});
 }
