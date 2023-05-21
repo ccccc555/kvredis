@@ -46,7 +46,7 @@ function sv(){
 fetch("/setname",option )
     .then(response => response.json() )
     .then(response => {alert("saved="+response.done)} )
-    .catch(err = {alert("set err="+err) } )
+    .catch(err = {alert("setting err="+err) } )
               
 }
        
@@ -63,14 +63,16 @@ function my(){
            
 ct1.font="50px Arial"
 ct1.fillText("Test3 key",0,90)
-    setTimeout(ky,2000)
-setTimeout(sv,4000)    
+    setTimeout(ky,2200)
+setTimeout(sv,5000)    
  
     
     
   
 
-    setInterval(posi,100)
+    setTimeout(posi,100)
+  
+  
   
   
     </script>
