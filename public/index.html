@@ -15,12 +15,10 @@ var xp,yp
 function posi(){
   ct1.clearRect(0,200,600,400)
     navigator.geolocation.getCurrentPosition((position) => {
-  yp=position.coords.latitude
-  xp=position.coords.longitude
+   yp=position.coords.latitude
+   xp=position.coords.longitude
       ct1.fillText(name, 360+3*xp,300-3*yp)
-      ct1.fillText(xp+"/"+yp,200,40)
-      
-      
+      ct1.fillText(xp+"/"+yp,200,40)       
 });
 }
     
@@ -30,7 +28,7 @@ function ky(){
      .then(response => response.json())
      .then(response => {
         alert('keys length='+response.le)
-               alert('keys='+response.ks[0]) 
+               alert('keys='+response.ks) 
                          } )
       .catch(err => {alert('keys err='+err)}); 
                         
@@ -42,12 +40,15 @@ function sv(){
       "Content-Type": "application/json",
     },
     body: JSON.stringify( {nme: name, xpos: xp}), 
-                          }
+  }
+  
+  
 fetch("/setname",option )
     .then(response => response.json() )
     .then(response => {alert("saved="+response.done)} )
     .catch(err = {alert("set err="+err) } )
-                 }
+              
+}
        
 function my(){
  const option = { method: 'GET', }  
@@ -61,7 +62,7 @@ function my(){
 }
            
 ct1.font="50px Arial"
-ct1.fillText("Test2 key",0,90)
+ct1.fillText("Test3 key",0,90)
     setTimeout(ky,2000)
 setTimeout(sv,4000)    
  
