@@ -35,7 +35,7 @@ function ky(){
 }
     
 function sv(){
-  const option= { method: 'POST', body: JSON.stringify({word: 'fred' } ) }
+  const option= { method: 'POST', body: JSON.stringify({word: name, x: xp, y: yp } ) }
   fetch("/setname",option )
   .then(response => response.json() )
   .then(response => { alert('newset') } )
