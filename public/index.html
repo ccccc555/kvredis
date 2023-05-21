@@ -79,10 +79,14 @@ function sv(){
     
            
 ct1.font="40px Arial"
-ct1.fillText("Finder",0,90)
-    
-   setTimeout(posi,100) 
- setInterval(ky,7000)
+ct1.fillText("Findu",0,90)
+run()  
+function run(){
+   posi()
+  setTimeout(ky,3000)
+  setTimeout(run,7000)
+ }
+      
 
  
     
