@@ -17,8 +17,10 @@ function posi(){
     navigator.geolocation.getCurrentPosition((position) => {
   yp=position.coords.latitude
   xp=position.coords.longitude
-      ct1.fillText(name, 300+xp,250+yp)
+      ct1.fillText(name, 360+3*xp,300-3*yp)
       ct1.fillText(xp+"/"+yp,200,40)
+      
+      
 });
 }
     
@@ -33,6 +35,19 @@ function ky(){
       .catch(err => {alert('keys err='+err)}); 
                         
 }
+function sv(){
+  const option= {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify( {nme: name, xpos: xp), 
+                          }
+fetch("/setname",option )
+    .then(response => response.json() )
+   // .then(response => {} )
+    .catch(err = {alert("set err="+err) } )
+                 }
        
 function my(){
  const option = { method: 'GET', }  
