@@ -18,7 +18,7 @@ var names=[]
 var proc, d=0,ups=0
  
 function posi(){
-  ct1.clearRect(0,700,700,200)
+  ct1.clearRect(0,700,800,200)
     navigator.geolocation.getCurrentPosition((position) => {
    yp=position.coords.latitude
    xp=position.coords.longitude
@@ -43,7 +43,7 @@ function ky(){
         
         }
        d=0
-       ct1.clearRect(0,300,700,700)
+       ct1.clearRect(0,300,800,700)
    ups++
   ct1.fillText('updates='+ups,10,330)
    
