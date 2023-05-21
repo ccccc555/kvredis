@@ -41,7 +41,7 @@ function sv(){
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify( {nme: name, xpos: xp), 
+    body: JSON.stringify( {nme: name, xpos: xp}), 
                           }
 fetch("/setname",option )
     .then(response => response.json() )
