@@ -35,6 +35,14 @@ function ky(){
 }
     
 function sv(){
+  const option= { method: 'GET', }
+  fetch("/setname",option )
+  .then(response => response.json() )
+  .then(response => { alert('newset') } )
+  .catch(err => {alert('newerr')}
+         }
+  
+  /*
   const option= {
     method: "POST",
     headers: {
@@ -48,6 +56,7 @@ fetch("/setname",option )
     .then(response => response.json() )
     .then(response => {alert("saved="+response.done)} )
     .catch(err = {alert("setting err="+err) } )
+    */
               
 }
 
@@ -66,7 +75,7 @@ function my(){
 */
            
 ct1.font="50px Arial"
-ct1.fillText("Test6",0,90)
+ct1.fillText("Test7",0,90)
     setTimeout(ky,2200)
  setTimeout(sv,5000)    
  
