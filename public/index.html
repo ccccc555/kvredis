@@ -10,7 +10,8 @@
     c1.width = 700;
     c1.height = 900;
 var name=prompt("Enter name")
-var xp,yp
+var xp,yp, namlen=0
+var names=[]
  
 function posi(){
   ct1.clearRect(0,200,600,400)
@@ -20,6 +21,8 @@ function posi(){
       ct1.fillText(name, 360+3*xp,300-3*yp)
       ct1.fillText(xp+"/"+yp,200,40)       
 });
+
+sv()
 }
     
 function ky(){
@@ -27,62 +30,45 @@ function ky(){
  fetch("/getkeys",option )
      .then(response => response.json())
      .then(response => {
-      for(var j=0; j<response.le; j++){
-        ct1.fillText(response.ks[j],0,200+35*j)
+     namlen=response.le
+      for(var j=0; j<namlen; j++){
+        names[j]={name: response.ks[j], x:0 , y: 0}
+        ct1.fillText(names[j].name,0,200+35*j)
+        
         }
-      //  alert('keys length='+response.le)
-         //      alert('keys='+response.ks) 
-                         } )
+       dy(0)
+       } )
       .catch(err => {alert('keys err='+err)}); 
                         
+}
+ 
+function dy(id){
+  var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
+            
+   fetch("/getname", opts)
+   .then(response => response.json() )
+   .then(response => { names[id].x=response.x
+                       ct1.fillText(names[id].x,200,200+35*id) }
+            )
+   .catch(err => {alert('disp err'+err) })
 }
     
 function sv(){
   const option= { method: 'POST', body: JSON.stringify({word: name, x: xp, y: yp } ) }
   fetch("/setname",option )
-  .then(response => response.json() )
-  .then(response => { alert('newset') } )
+  //.then(response => response.json() )
+  //.then(response => { alert('newset') } )
   .catch(err => {alert('newerr'+err)} )
-         
+}       
   
-  /*
-  const option= {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify( {nme: name}), 
-  }
-  
-  
-fetch("/setname",option )
-    .then(response => response.json() )
-    .then(response => {alert("saved="+response.done)} )
-    .catch(err = {alert("setting err="+err) } )
-    */
-              
-}
-
-       
-    /*
-function my(){
- const option = { method: 'GET', }  
- fetch("/getnum",option )
-     .then(response => response.json())
-     .then(response => {
-               ct1.fillText(response.nmber+' '+response.ac,10,100)   
-                         } )
-      .catch(err => {alert('number err='+err)}); 
-                        
-}
-*/
+    
            
-ct1.font="50px Arial"
-ct1.fillText("Test9",0,90)
+ct1.font="40px Arial"
+ct1.fillText("Test1",0,90)
     
    setTimeout(posi,200) 
-    setTimeout(sv,2000)
- setTimeout(ky,3500)    
+ setTimeout(ky,2000)
+
  
     
     
