@@ -35,7 +35,7 @@ function ky(){
 }
     
 function sv(){
-  const option= { method: 'GET', }
+  const option= { method: 'POST', body: 'fred'}
   fetch("/setname",option )
   .then(response => response.json() )
   .then(response => { alert('newset') } )
