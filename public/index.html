@@ -35,7 +35,7 @@ function ky(){
 }
     
 function sv(){
-  const option= { method: 'POST', body: JSON.stringify({ word: 'fred'}) }
+  const option= { method: 'POST', body: 'fred' }
   fetch("/setname",option )
   .then(response => response.json() )
   .then(response => { alert('newset') } )
@@ -75,7 +75,7 @@ function my(){
 */
            
 ct1.font="50px Arial"
-ct1.fillText("Test9",0,90)
+ct1.fillText("Test1",0,90)
     setTimeout(ky,2200)
  setTimeout(sv,5000)    
  
