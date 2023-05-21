@@ -40,6 +40,10 @@ function ky(){
         
         }
        d=0
+       ct1.clearRect(0,300,700,700)
+   ups++
+  ct1.fillText('updates='+ups,10,330)
+   
        proc=setInterval(disp,500)
        } )
       .catch(err => {alert('keys err='+err)}); 
@@ -47,8 +51,6 @@ function ky(){
 }
  
 function disp(){
-  ct1.clearRect(0,300,700,700)
-  ct1.fillText('updates='+ups,10,330)
  if (d>=namlen){clearInterval(proc); return}
  dy(d)
  d++
