@@ -33,7 +33,7 @@ function posi(){
    yp=position.coords.latitude
    xp=position.coords.longitude
         
-      setTimeout(sv,10)
+      sv(name,xp,yp)
 });
 
 
@@ -92,8 +92,8 @@ function dy(id){
    .catch(err => {alert('disp err'+err) })
 }
     
-function sv(){
-  const option= { method: 'POST', body: JSON.stringify({word: name, x: xp, y: yp } ) }
+function sv(nm,nx,ny){
+  const option= { method: 'POST', body: JSON.stringify({word: nm, x: nx, y: ny } ) }
   fetch("/setname",option )
   //.then(response => response.json() )
   //.then(response => { alert('newset') } )
@@ -109,8 +109,15 @@ ct1.font="32px Arial"
  else{ run() }
 
 function admin(){
-  var deln=prompt('Key to delete')
-  dl(0)
+  var deln=prompt('d delete, a add')
+  if(deln=='d'){dl(0)}
+  if(deln=='a'){
+    const nadd=prompt('Name')
+    const xadd=prompt('X')
+    const yadd=promot('Y')
+    sv(nadd,xadd,yadd)
+    }
+    
   }
   
 function run(){
