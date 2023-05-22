@@ -16,7 +16,13 @@
     ct1.fillStyle='#FF9999'
     ct1.fillRect(0,0,1050,1250)
     ct1.fillStyle='black'
-    ct2.fillText('FindU',0,350)
+    ct2.font="40px Arial"
+    ct2.fillText('FindU',500,850)
+    var img=new Image()
+    img.onload = function(){
+      ct2.drawImage(img,0,0,1000,600)
+      }
+    img.src="IMG_1564.avif"
 var name=prompt("Enter name")
 var xp,yp, namlen=0
 var names=[]
@@ -87,7 +93,6 @@ function sv(){
     
            
 ct1.font="40px Arial"
-ct1.fillText("Findu",0,850)
 run()  
 function run(){
    posi()
