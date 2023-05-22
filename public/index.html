@@ -16,7 +16,7 @@
   
     ct1.fillStyle='black'
     ct2.font="40px Arial"
-    ct2.fillText('FindU',500,850)
+    ct2.fillText('FindU',700,950)
     var img=new Image()
     img.onload = function(){
       ct2.drawImage(img,0,0,1000,600)
@@ -33,7 +33,7 @@ function posi(){
    yp=position.coords.latitude
    xp=position.coords.longitude
       ct1.fillText(name, 360+3*xp,300-3*yp)
-      ct1.fillText(xp+"/"+yp,400,860)   
+      ct1.fillText(xp+"/"+yp,200,890)   
       
       setTimeout(sv,10)
 });
