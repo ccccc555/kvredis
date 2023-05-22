@@ -68,6 +68,17 @@ function disp(){
  d++
 }
 
+ function dl(id){
+  var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
+            
+   fetch("/delname", opts)
+   .then(response => response.json() )
+   .then(response => { 
+                       alert(names[id].name +' deleted') }
+            )
+   .catch(err => {alert('del err'+err) })
+}   
+    
 function dy(id){
   var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
             
@@ -99,6 +110,7 @@ ct1.font="32px Arial"
 function admin(){
   var deln=prompt('Key to delete')
   alert('del-'+names[+deln].name+'-')
+  dl(+deln)
   }
   
 function run(){
