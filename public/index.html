@@ -56,7 +56,7 @@ function ky(){
    ups++
   ct1.fillText('updates='+ups,10,630)
    
-       proc=setInterval(disp,500)
+    if(name!='Admin') {proc=setInterval(disp,500)}
        } )
       .catch(err => {alert('keys err='+err)}); 
                         
@@ -91,7 +91,16 @@ function sv(){
     
            
 ct1.font="32px Arial"
-run()  
+    if(name=='Admin'){setTimeout(ky,1000)
+                      setTimeout(admin,3000)
+                      }
+ else{ run() }
+
+function admin(){
+  var deln=prompt('Key to delete')
+  alert('del-'+names[deln].name+'-')
+  }
+  
 function run(){
    posi()
   setTimeout(ky,3000)
