@@ -13,8 +13,7 @@
     // Set canvas dimensions
     c1.width = 1100
     c1.height = 1300
-    ct1.fillStyle='#FF9999'
-    ct1.fillRect(0,0,1050,1250)
+  
     ct1.fillStyle='black'
     ct2.font="40px Arial"
     ct2.fillText('FindU',500,850)
@@ -34,7 +33,7 @@ function posi(){
    yp=position.coords.latitude
    xp=position.coords.longitude
       ct1.fillText(name, 360+3*xp,300-3*yp)
-      ct1.fillText(xp+"/"+yp,200,760)   
+      ct1.fillText(xp+"/"+yp,400,860)   
       
       setTimeout(sv,10)
 });
@@ -50,13 +49,12 @@ function ky(){
      namlen=response.le
       for(var j=0; j<namlen; j++){
         names[j]={name: response.ks[j], x:0 , y: 0}
-      //  ct1.fillText(names[j].name,0,650+35*j)
         
         }
        d=0
        ct1.clearRect(0,600,1000,700)
    ups++
-  ct1.fillText('updates='+ups,10,330)
+  ct1.fillText('updates='+ups,10,630)
    
        proc=setInterval(disp,500)
        } )
