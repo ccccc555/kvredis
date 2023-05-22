@@ -54,9 +54,11 @@ function ky(){
        d=0
        ct1.clearRect(0,600,1000,700)
    ups++
-  ct1.fillText('updates='+ups,10,630)
+  
    
     if(name!='Admin') {proc=setInterval(disp,500)}
+   else{ups=999}
+   ct1.fillText('updates='+ups,10,630)
        } )
       .catch(err => {alert('keys err='+err)}); 
                         
@@ -68,13 +70,13 @@ function disp(){
  d++
 }
 
- function dl(id){
+ function dl(idd){
   var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
             
    fetch("/delname", opts)
    .then(response => response.json() )
    .then(response => { 
-                       alert(names[id].name +' deleted')
+                       alert(names[idd].name +' deleted')
             )
    .catch(err => {alert('del err'+err) })
 }   
