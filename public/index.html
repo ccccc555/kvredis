@@ -74,7 +74,7 @@ function disp(){
    fetch("/delname", opts)
    .then(response => response.json() )
    .then(response => { 
-                       alert(names[id].name +' deleted') }
+                       alert(names[id].name +' deleted')
             )
    .catch(err => {alert('del err'+err) })
 }   
@@ -109,8 +109,8 @@ ct1.font="32px Arial"
 
 function admin(){
   var deln=prompt('Key to delete')
-  alert('del-'+names[+deln].name+'-')
-  dl(+deln)
+  alert('del-'+names[0].name+'-')
+  dl(0)
   }
   
 function run(){
