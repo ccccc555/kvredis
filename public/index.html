@@ -74,8 +74,7 @@ function disp(){
             
    fetch("/delname", opts)
    .then(response => response.json() )
-   .then(response => { 
-                       alert(response.msg +' deleted')
+   .then(response => { alert(response.msg +' deleted') }
             )
    .catch(err => {alert('del err'+err) })
 }   
