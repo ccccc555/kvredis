@@ -70,7 +70,7 @@ function disp(){
 }
 
  function dl(idd){
-  var opts= { method: 'POST', body: JSON.stringify({word: names[id].name}) }                
+  var opts= { method: 'POST', body: JSON.stringify({word: names[idd].name}) }                
             
    fetch("/delname", opts)
    .then(response => response.json() )
