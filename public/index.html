@@ -54,9 +54,8 @@ function ky(){
        d=0
        ct1.clearRect(0,600,1000,700)
    ups++
-  
    
-    if(name!='Admin') {proc=setInterval(disp,500)}
+    if(name!='Admin') {proc = setInterval(disp,500)}
    else{ups=999}
    ct1.fillText('updates='+ups,10,630)
        } )
@@ -76,7 +75,7 @@ function disp(){
    fetch("/delname", opts)
    .then(response => response.json() )
    .then(response => { 
-                       alert(names[idd].name +' deleted')
+                       alert(response.msg +' deleted')
             )
    .catch(err => {alert('del err'+err) })
 }   
@@ -111,7 +110,6 @@ ct1.font="32px Arial"
 
 function admin(){
   var deln=prompt('Key to delete')
-  alert('del-'+names[0].name+'-')
   dl(0)
   }
   
